@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  db:
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: 'tecmentor1'
+      MYSQL_USER: 'tecmentor'
+      MYSQL_PASSWORD: 'tecmentor@123'
+      MYSQL_ROOT_PASSWORD: 'tecmentor@123'
+    ports:
+      - '3307:3306'
+    expose:
+      - '3307'
+    volumes:
+      - my-db:/var/lib/mysql
+
+volumes:
+  my-db:
